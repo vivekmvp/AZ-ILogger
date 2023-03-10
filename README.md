@@ -98,8 +98,8 @@ Make sure appropriate log-level is set otherwise no logs will be logged.
 ```json
   "Logging": {
     "LogLevel": {
-      "Default": "Trace",
-      "Microsoft.AspNetCore": "Trace"
+      "Default": "Debug",
+      "Microsoft.AspNetCore": "Debug"
     }
   }
 ```
