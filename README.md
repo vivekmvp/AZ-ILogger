@@ -118,5 +118,18 @@ When a LogLevel is specified, logging is enabled for messages at the specified l
 
 **Step 7:** Go to Application Insights and view the logs
 
+----
+
+# Screenshots of Application Insights Logs
+
+## Transaction search
+<img width="694" alt="image" src="https://user-images.githubusercontent.com/30829678/224395000-803d49bb-0f8a-4b5d-8d07-58e766c3a9ee.png">
+
+## End to end transaction (By clicking on any request)
+<img width="560" alt="image" src="https://user-images.githubusercontent.com/30829678/224395428-ce6009cf-79da-46e3-967b-aa8c0099beef.png">
+
+<img width="359" alt="image" src="https://user-images.githubusercontent.com/30829678/224395867-b58bcc2f-c53e-4493-93f7-933f811b6e7e.png">
+
+<img width="742" alt="image" src="https://user-images.githubusercontent.com/30829678/224396415-d83d2c73-9e3b-436c-aaf9-ff74f63d5757.png">
 
 
