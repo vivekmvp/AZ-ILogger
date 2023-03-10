@@ -93,9 +93,30 @@ public IActionResult Index()
 }
 ```
 
+Make sure appropriate log-level is set otherwise no logs will be logged.
+
+```json
+  "Logging": {
+    "LogLevel": {
+      "Default": "Trace",
+      "Microsoft.AspNetCore": "Trace"
+    }
+  }
+```
+
+When a LogLevel is specified, logging is enabled for messages at the specified level and higher.
+- Trace = 0, 
+- Debug = 1, 
+- Information = 2, 
+- Warning = 3, 
+- Error = 4, 
+- Critical = 5, and 
+- None = 6.
+
+
+
 
 **Step 7:** Go to Application Insights and view the logs
-
 
 
 
