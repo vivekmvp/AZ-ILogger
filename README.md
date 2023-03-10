@@ -15,3 +15,55 @@
 - Tracing is [only well supported](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/logging-tracing#trace) in .Net Framework and doesn't have good support in .Net core.
 - **ILogger may offer better functionality for .Net Core**
 
+----
+
+# Practical Demo
+
+**Step 1:** Create a .Net core 6.0 application and deploy it to Web App.
+
+**Step 2:** Create Application Insights in Azure
+<kbd>
+![image](https://user-images.githubusercontent.com/30829678/224212706-b56a6941-fb30-4773-ad51-493822c24971.png)
+</kbd>
+
+![image](https://user-images.githubusercontent.com/30829678/224212956-68278d6c-53a6-40e7-9149-2ccc28a4b6d6.png)
+<br/><br/>
+
+**Step 3:**  Copy the Instrument Key of Application insight and save in WebApp Application configuration.
+<kbd>
+![image](https://user-images.githubusercontent.com/30829678/224213192-8ad3f6b9-87b5-402a-847d-72aeec53a456.png)
+</kbd>
+
+![image](https://user-images.githubusercontent.com/30829678/224213217-af7d37b6-6980-4ec5-977a-056001c229f1.png)
+
+![image](https://user-images.githubusercontent.com/30829678/224213239-cd44c322-f46b-4ea8-b52b-94e78fa72f7d.png)
+<br/><br/>
+
+**Step 4:** Add nuget package - Microsoft.ApplicationInsights.Aspnetcore
+<kbd>
+![image](https://user-images.githubusercontent.com/30829678/224213527-7656a753-bb0a-481a-958a-08105e6ea8a7.png)
+</kbd>
+
+<br/><br/>
+
+**Step 5:**  Update program.cs file to add service
+
+<pre>
+var builder = WebApplication.CreateBuilder(args);
+
+<b>//Add Logging support
+builder.Services.AddApplicationInsightsTelemetry();</b>
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
+var app = builder.Build();
+</pre>
+
+<br/>
+**Step 6:**  Add few logs for testing purpose in Home --> Index action method and Publish it to Azure.
+
+
+
+
+
