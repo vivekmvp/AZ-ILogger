@@ -61,8 +61,40 @@ var app = builder.Build();
 </pre>
 
 <br/>
+
 **Step 6:**  Add few logs for testing purpose in Home --> Index action method and Publish it to Azure.
 
+```csharp
+public IActionResult Index()
+{
+    //To log structure data
+    var weatherObj = new
+    {
+        Date = DateTime.Now.AddDays(Random.Shared.Next(1, 15)),
+        TemperatureC = Random.Shared.Next(-20, 55),
+    };
+
+    _logger.LogDebug($"Debug {weatherObj}");
+    _logger.LogInformation($"Info {weatherObj}");
+    _logger.LogWarning($"Warning {weatherObj}");
+    _logger.LogError($"Error {weatherObj}");
+    _logger.LogCritical($"Criteria {weatherObj}");
+
+    try
+    {
+        throw new NotImplementedException();
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, ex.Message);
+    }
+
+    return View();
+}
+```
+
+
+**Step 7:** Go to Application Insights and view the logs
 
 
 
